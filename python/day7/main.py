@@ -4,12 +4,11 @@ def operation (a,b,operator):
         return a+b
     if operator == "*":
         return a*b
-    if operator == "||":
-        return  int(str(a) + str(b))
-OPERATIONS= ["+","*", "||"]
+
+OPERATIONS= ["+","*"]
 def main():
     sum=0
-    with open('in.txt', 'r') as f:
+    with open('in-test.txt', 'r') as f:
         lines = f.readlines()
         for line in lines:
             result =int(line.split(":")[0].strip())
@@ -30,6 +29,7 @@ def main():
 
             for computed_resukt in prev_results:
                 if computed_resukt == result:
+                    print("found")
                     sum+=computed_resukt
                     break
 
